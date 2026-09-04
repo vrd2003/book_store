@@ -1,107 +1,172 @@
-📚 Book Store
+# 📚 Book Store
 
-A full-stack Book Store Web Application built using React, TypeScript, Spring Boot, MySQL, and MongoDB. The application allows users to register and log in, browse books, search and filter books, and provides book management functionality through REST APIs.
+A full-stack **Book Store Web Application** built using **React, TypeScript, Spring Boot, MySQL, and MongoDB**.
 
-📌 Project Overview
+The application provides a user-friendly platform for browsing and managing books, along with user registration and login functionality.
 
-The Book Store is designed as a full-stack web application with a separate frontend and backend.
+---
 
-The frontend is developed using React and TypeScript, providing a responsive and user-friendly interface.
+## 📌 Table of Contents
 
-The backend is developed using Spring Boot and exposes RESTful APIs for user authentication and book management.
+- [About the Project](#-about-the-project)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [Project Architecture](#-project-architecture)
+- [Project Structure](#-project-structure)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
+- [Database Configuration](#-database-configuration)
+- [Running the Application](#-running-the-application)
+- [API Documentation](#-api-documentation)
+- [API Examples](#-api-examples)
+- [Security](#-security)
+- [Testing](#-testing)
+- [Production Build](#-production-build)
+- [Future Enhancements](#-future-enhancements)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Author](#-author)
 
-The application uses:
+---
 
-MySQL for storing user-related information.
-MongoDB for storing book-related information.
-🚀 Features
-👤 User Features
-User registration
-User login
-Password encryption using BCrypt
-Input validation
-User data management
-📖 Book Features
-Display all available books
-View book details
-Search books by title
-Filter books by category
-Add new books
-Update book information
-Delete books
-Manage book price and stock
-Store book descriptions and images
-💻 Application Features
-RESTful API architecture
-React-based user interface
-TypeScript support
-Responsive design
-MySQL database integration
-MongoDB database integration
-Spring Security integration
-Maven-based backend project
-🛠️ Technologies Used
-Frontend
-Technology	Purpose
-React	Frontend UI
-TypeScript	Type-safe JavaScript
-Tailwind CSS	Styling
-Axios	API communication
-React DOM	Rendering UI
-npm	Package management
-Backend
-Technology	Purpose
-Java 21	Programming language
-Spring Boot	Backend framework
-Spring Web	REST APIs
-Spring Data JPA	MySQL database interaction
-Spring Data MongoDB	MongoDB integration
-Spring Security	Security
-Bean Validation	Input validation
-BCrypt	Password encryption
-Lombok	Reduce boilerplate code
-Maven	Dependency management
-Database
-Database	Purpose
-MySQL	User information
-MongoDB	Book information
-🏗️ Project Architecture
-                    ┌─────────────────────┐
-                    │      User           │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   React Frontend    │
-                    │ React + TypeScript  │
-                    │    Tailwind CSS     │
-                    └──────────┬──────────┘
-                               │
-                          REST API
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   Spring Boot API   │
-                    │      Backend        │
-                    └──────────┬──────────┘
-                               │
-                 ┌─────────────┴─────────────┐
-                 │                           │
-                 ▼                           ▼
-        ┌─────────────────┐        ┌─────────────────┐
-        │      MySQL      │        │     MongoDB     │
-        │                 │        │                 │
-        │  User Data      │        │   Book Data     │
-        └─────────────────┘        └─────────────────┘
+## 📖 About the Project
+
+**Book Store** is a full-stack web application developed using a modern frontend and backend architecture.
+
+The frontend is built with **React and TypeScript**, while the backend is developed using **Spring Boot**.
+
+The application uses two databases:
+
+- **MySQL** for user-related information
+- **MongoDB** for book-related information
+
+The frontend communicates with the backend through RESTful APIs.
+
+---
+
+## ✨ Features
+
+### 👤 User Management
+
+- User registration
+- User login
+- Password encryption using BCrypt
+- User input validation
+- User information management
+
+### 📚 Book Management
+
+- View all books
+- View individual book details
+- Search books by title
+- Filter books by category
+- Add new books
+- Update existing books
+- Delete books
+- Manage book prices
+- Manage book stock
+- Book descriptions
+- Book image URLs
+
+### 💻 Application Features
+
+- Responsive user interface
+- RESTful API architecture
+- React and TypeScript frontend
+- Spring Boot backend
+- MySQL database integration
+- MongoDB database integration
+- Spring Security
+- BCrypt password encryption
+- Maven project management
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+
+| Technology | Description |
+|------------|-------------|
+| React | Frontend library |
+| TypeScript | Programming language |
+| Tailwind CSS | UI styling |
+| Axios | HTTP client for API requests |
+| React DOM | React rendering |
+| npm | Package management |
+
+### Backend
+
+| Technology | Description |
+|------------|-------------|
+| Java 21 | Programming language |
+| Spring Boot | Backend framework |
+| Spring Web | REST API development |
+| Spring Data JPA | MySQL database integration |
+| Spring Data MongoDB | MongoDB integration |
+| Spring Security | Application security |
+| Bean Validation | Request validation |
+| BCrypt | Password hashing |
+| Lombok | Reduces boilerplate code |
+| Maven | Dependency management |
+
+### Databases
+
+| Database | Purpose |
+|----------|---------|
+| MySQL | User information |
+| MongoDB | Book information |
+
+---
+
+## 🏗️ Project Architecture
+
+```text
+                         ┌─────────────────┐
+                         │      USER       │
+                         └────────┬────────┘
+                                  │
+                                  ▼
+                    ┌─────────────────────────┐
+                    │     React Frontend      │
+                    │                         │
+                    │ React + TypeScript      │
+                    │ Tailwind CSS            │
+                    │ Axios                   │
+                    └────────────┬────────────┘
+                                 │
+                              REST API
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │    Spring Boot Backend  │
+                    │                         │
+                    │ Spring Web              │
+                    │ Spring Security         │
+                    │ REST Controllers        │
+                    │ Services                │
+                    │ Repositories            │
+                    └────────────┬────────────┘
+                                 │
+                   ┌─────────────┴─────────────┐
+                   │                           │
+                   ▼                           ▼
+          ┌─────────────────┐         ┌─────────────────┐
+          │      MySQL      │         │     MongoDB     │
+          │                 │         │                 │
+          │   User Data     │         │    Book Data    │
+          └─────────────────┘         └─────────────────┘
 
 📂 Project Structure
 book_store/
 │
 ├── backend/
+│   │
 │   ├── src/
 │   │   └── main/
 │   │       ├── java/
 │   │       │   └── ...
+│   │       │
 │   │       └── resources/
 │   │           └── application.properties
 │   │
@@ -111,9 +176,12 @@ book_store/
 │   └── README.md
 │
 ├── frontend/
+│   │
 │   ├── public/
+│   │
 │   ├── src/
 │   │   └── ...
+│   │
 │   ├── package.json
 │   ├── package-lock.json
 │   ├── tailwind.config.js
@@ -122,10 +190,9 @@ book_store/
 ├── .gitignore
 └── README.md
 
-⚙️ Installation and Setup
-1. Prerequisites
+⚙️ Prerequisites
 
-Before running the project, make sure the following are installed:
+Before running the project, make sure the following software is installed.
 
 Java 21 or higher
 Node.js
@@ -134,7 +201,17 @@ Maven
 MySQL
 MongoDB
 Git
-2. Clone the Repository
+
+You can verify the installations using:
+
+java -version
+node -v
+npm -v
+mvn -version
+git --version
+
+📥 Installation
+1. Clone the Repository
 git clone https://github.com/vrd2003/book_store.git
 
 
@@ -143,44 +220,55 @@ Navigate to the project directory:
 cd book_store
 
 🗄️ Database Configuration
-MySQL
+MySQL Configuration
 
-Start your MySQL server and create the required database.
+Start your MySQL server.
+
+Create the database:
 
 CREATE DATABASE bookstore;
 
 
-Configure the MySQL username, password, and database connection in:
+Open:
 
 backend/src/main/resources/application.properties
 
 
-Example:
+Configure the MySQL connection:
 
 spring.datasource.url=jdbc:mysql://localhost:3306/bookstore
 spring.datasource.username=root
 spring.datasource.password=YOUR_PASSWORD
 
 
-Update the database username and password according to your local MySQL configuration.
+Replace:
 
-MongoDB
-
-Make sure MongoDB is installed and running on your system.
-
-Configure the MongoDB connection in:
-
-backend/src/main/resources/application.properties
+YOUR_PASSWORD
 
 
-Example:
+with your actual MySQL password.
+
+MongoDB Configuration
+
+Make sure MongoDB is running on your system.
+
+Example MongoDB configuration:
 
 spring.data.mongodb.uri=mongodb://localhost:27017/bookstore
 
 
-Update the MongoDB configuration if you are using MongoDB Atlas or a different database configuration.
+If you are using MongoDB Atlas, replace the URI with your MongoDB Atlas connection string.
 
-▶️ Running the Backend
+▶️ Running the Application
+
+The application consists of two parts:
+
+Backend
+Frontend
+
+Both need to be running.
+
+🚀 Start the Backend
 
 Open a terminal and navigate to the backend directory:
 
@@ -193,28 +281,30 @@ Windows
 mvnw.cmd spring-boot:run
 
 
-The backend will start on:
+The backend will start at:
 
 http://localhost:8080
 
-🌐 Running the Frontend
+🌐 Start the Frontend
 
-Open another terminal and navigate to the frontend directory:
+Open another terminal.
+
+Navigate to the frontend directory:
 
 cd frontend
 
 
-Install the dependencies:
+Install dependencies:
 
 npm install
 
 
-Start the development server:
+Start the application:
 
 npm start
 
 
-The frontend will be available at:
+The frontend will start at:
 
 http://localhost:3000
 
@@ -222,26 +312,22 @@ http://localhost:3000
 👤 User APIs
 Method	Endpoint	Description
 POST	/api/users/register	Register a new user
-POST	/api/users/login	Login user
+POST	/api/users/login	Login an existing user
 📚 Book APIs
 Method	Endpoint	Description
 GET	/api/books	Get all books
 GET	/api/books/{id}	Get book by ID
 POST	/api/books	Add a new book
-PUT	/api/books/{id}	Update a book
+PUT	/api/books/{id}	Update an existing book
 DELETE	/api/books/{id}	Delete a book
 GET	/api/books/search?title={title}	Search books by title
 GET	/api/books/category/{category}	Get books by category
 📝 API Examples
 Register User
+Request
+POST http://localhost:8080/api/users/register
 
-POST
-
-/api/users/register
-
-
-Request body:
-
+Request Body
 {
   "name": "John Doe",
   "email": "john@example.com",
@@ -250,28 +336,28 @@ Request body:
 }
 
 Login User
+Request
+POST http://localhost:8080/api/users/login
 
-POST
-
-/api/users/login
-
-
-Request body:
-
+Request Body
 {
   "email": "john@example.com",
   "password": "password123"
 }
 
-Add Book
+Get All Books
+Request
+GET http://localhost:8080/api/books
 
-POST
+Get Book by ID
+Request
+GET http://localhost:8080/api/books/{id}
 
-/api/books
+Add New Book
+Request
+POST http://localhost:8080/api/books
 
-
-Request body:
-
+Request Body
 {
   "title": "The Alchemist",
   "author": "Paulo Coelho",
@@ -282,64 +368,105 @@ Request body:
   "stock": 10
 }
 
+Update Book
+Request
+PUT http://localhost:8080/api/books/{id}
+
+Request Body
+{
+  "title": "The Alchemist",
+  "author": "Paulo Coelho",
+  "price": 349,
+  "category": "Fiction",
+  "description": "A story about following your dreams.",
+  "imageUrl": "https://example.com/book.jpg",
+  "stock": 15
+}
+
+Delete Book
+Request
+DELETE http://localhost:8080/api/books/{id}
+
+Search Books
+Request
+GET http://localhost:8080/api/books/search?title=alchemist
+
+Filter Books by Category
+Request
+GET http://localhost:8080/api/books/category/Fiction
+
 🔐 Security
 
-The application uses Spring Security and BCrypt password hashing to improve the security of user credentials.
+The application uses Spring Security and BCrypt password hashing for user authentication and password protection.
 
-Sensitive configuration such as database passwords should not be committed to GitHub.
+Security Practices
+Passwords are hashed using BCrypt
+User input is validated
+Database credentials should not be exposed
+Sensitive configuration should not be committed to GitHub
+Environment variables should be used for production credentials
 
-For production deployment, environment variables should be used for database credentials and other sensitive configuration.
+For production applications, JWT-based authentication and role-based authorization can be added.
 
 🧪 Testing
-Frontend Tests
+Frontend Testing
 
 Navigate to the frontend directory:
 
 cd frontend
 
 
-Run:
+Run the tests:
 
 npm test
 
-Backend Tests
+Backend Testing
 
 Navigate to the backend directory:
 
 cd backend
 
-
-Run:
-
+Linux / macOS
 ./mvnw test
+
+Windows
+mvnw.cmd test
+
+📦 Production Build
+Frontend Production Build
+
+Navigate to the frontend:
+
+cd frontend
+
+
+Create a production build:
+
+npm run build
+
+
+The production files will be generated inside:
+
+frontend/build/
+
+Backend Production Build
+
+Navigate to the backend:
+
+cd backend
+
+
+Build the application:
+
+./mvnw clean package
 
 
 For Windows:
 
-mvnw.cmd test
-
-📦 Production Build
-Frontend
-
-Create a production build using:
-
-cd frontend
-npm run build
+mvnw.cmd clean package
 
 
-The production files will be generated in:
-
-frontend/build/
-
-Backend
-
-Create the backend package using:
-
-cd backend
-./mvnw clean package
-
-
-The generated JAR file will be available in:
+The generated JAR file will be available inside:
 
 backend/target/
 
@@ -355,68 +482,87 @@ The following features can be added in future versions:
 🔎 Advanced search
 📄 Pagination
 👨‍💼 Admin dashboard
-🔐 JWT-based authentication
+🔐 JWT authentication
 👥 Role-based authorization
 🖼️ Book image upload
-📊 Sales and inventory dashboard
+📊 Sales dashboard
+📈 Inventory management
+📧 Email notifications
 🐳 Docker support
 ☁️ Cloud deployment
 🤝 Contributing
 
-Contributions are welcome.
+Contributions are welcome and appreciated.
+
+Steps to Contribute
 
 Fork the repository.
-Create a new branch.
+
+Clone your fork:
+
+git clone https://github.com/vrd2003/book_store.git
+
+Create a new branch:
 git checkout -b feature/new-feature
 
+
 Make your changes.
-Commit your changes.
+
+Add your changes:
+
 git add .
+
+Commit your changes:
 git commit -m "Add new feature"
 
-Push your branch.
+Push your branch:
 git push origin feature/new-feature
 
 Create a Pull Request.
 📄 License
 
-This project currently does not include a specific open-source license.
+This project currently does not specify an open-source license.
 
-If you plan to distribute or open-source this project, it is recommended to add an appropriate license.
+If you plan to distribute or open-source this project, add an appropriate LICENSE file.
 
 👨‍💻 Author
 
 VRD2003
 
-GitHub Repository:
+GitHub:
 
-https://github.com/vrd2003/book_store
+https://github.com/vrd2003
 
 ⭐ Support
 
-If you found this project useful, please consider giving the repository a ⭐ Star on GitHub.
+If you like this project, please consider giving the repository a ⭐ Star on GitHub.
 
-📌 Quick Start
-
-For a quick setup:
-
-# Clone project
+🚀 Quick Start
+# Clone repository
 git clone https://github.com/vrd2003/book_store.git
 
+# Navigate to project
+cd book_store
+
 # Start backend
-cd book_store/backend
+cd backend
 ./mvnw spring-boot:run
 
-# In another terminal, start frontend
-cd book_store/frontend
+# Open another terminal
+cd frontend
+
+# Install dependencies
 npm install
+
+# Start frontend
 npm start
 
+🌐 Application URLs
+Application	URL
+Frontend	http://localhost:3000
+Backend	http://localhost:8080
+📌 Repository
 
-Then open:
+https://github.com/vrd2003/book_store
 
-Frontend: http://localhost:3000
-Backend:  http://localhost:8080
-
-
-Built with ❤️ using React, Spring Boot, MySQL, and MongoDB.
+Built with ❤️ using React, TypeScript, Spring Boot, MySQL, and MongoDB.
